@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: linear-gradient(to bottom, #000000, #333333);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000000;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    /* necessário para posicionar .banner sobre o background */
+    background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0.85) 20%,
+            rgba(0, 0, 0, 0.6) 30%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(0, 0, 0, 0) 65%),
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.8)10%,
+            rgba(0, 0, 0, 0.2)20%,
+            rgba(20, 20, 20, 0.2)80%,
+            rgba(20, 20, 20, 1)100%),
+
+        url('./imagens/STN.jpg');
+    background-size: cover;
+    padding: 0.26rem 0.75rem 0 0.75rem;
+
+}
+
+.hero {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 3rex;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    /* manter o header acima do banner */
+}
+
+.logo img {
+    width: 5.8rem;
+    margin-left: 1.5rem;
+    margin-right: 3rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.menu-left,
+.menu-right {
+    display: flex;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.menu-left ul li {
+    padding-right: 1.8rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-left ul li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #e50914;
+    transition: width 0.3s ease;
+}
+
+.menu-left ul li:hover::after {
+    width: 100%;
+    max-width: calc(100% - 1.8rem);
+}
+
+.menu-right ul li {
+    padding-right: 1.8rem;
+}
+
+.menu .user img {
+    width: 2rem;
+    margin-right: 0.5rem;
+}
+
+.menu .user {
+    display: flex;
+    align-items: center;
+}
+
+.menu i {
+    font: 10px;
+}
+
+.menu-right ul li {
+    padding-right: 1.5rem;
+
+}
+
+
+.banner {
+    position: absolute;
+    top: 10rem;
+    /* ajuste se precisar subir/baixar os botões */
+    left: 6%;
+    width: 45%;
+    z-index: 4;
+    /* fica acima do background, abaixo do header */
+    color: #fff;
+}
+
+.banner .poster {
+    display: none;
+}
+
+/* usamos o background do .container (STN) */
+
+.banner .subtitle {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.banner img {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.buttons .btn {
+    color: #fff;
+    padding: 0.6rem 2rem;
+    font-weight: 600;
+    border-radius: 0.125rem;
+    background: rgba(51, 51, 51, 0.4);
+    font-family: inherit;
+    font-size: 100%;
+    border: 0
+}
+
+.btn {
+    background-color: #fff;
+    color: #000;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.btn:hover {
+    background-color: #e50914;
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.buttons .btn i {
+    margin-right: 0.5rem;
+}
+
+.categoria {
+    height: 200px;
+}
+
+.categoria span {
+    color: #e5e5e5;
+    font-size: 18px;
+    line-height: 17px;
+    font-weight: 600;
+    padding: 10px;
+    top: 15rem;
+}
+
+.slider {
+    margin-top: 0.8rem;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    left: 3.75rem;
+    right: 0;
+}
+
+.slider .movie {
+    min-width: 19.3%;
+}
+
+.slider .movie img {
+    width: 100%;
+    height: 150px;
+    /* ajuste esse valor */
+    object-fit: cover;
+    /* corta a imagem sem distorcer */
+    padding-right: 5px;
+}
+
+.footer {
+    margin: 100px auto 0;
+    width: 80%;
+    color: #808080;
+
+}
+
+.footer .social i {
+    padding-right: 26px;
+    font-size: 30px;
+}
+
+.flex {
+    display: flex;
+    padding-bottom: 80px;
+}
+
+.footer .info {
+    width: 25%;
+}
+
+.footer .info ul {
+    list-style: none;
+    display: inline;
+    font-size: 12px;
+}
+
+.footer .info ul li {
+    margin-top: 8px;
+}
+
+footer {
+    background-color: #141414;
+    /* fundo estilo Netflix */
+    color: #fff;
+}
+
+footer li {
+    color: #fff;
+}
+
+footer i {
+    color: #fff;
+
+}
+
+footer {
+    background-color: #141414;
+    color: #b3b3b3;
+}
+
+.fo {
+    padding: 3rem;
+}
+
+.social {
+    margin-bottom: 2rem;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social i {
+    font-size: 1.8rem;
+    color: #b3b3b3;
+    transition: transform 0.2s ease;
+}
+
+.social i:hover {
+    color: #fff;
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    gap: 4rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    /* centraliza o bloco todo */
+    gap: 4rem;
+}
+
+.info li {
+    margin-bottom: 0.8rem;
+}
+
+footer i:hover,
+footer li:hover {
+    color: #fff;
+    cursor: pointer;
+}
